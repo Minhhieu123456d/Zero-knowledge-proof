@@ -1,0 +1,87 @@
+
+   VÍ DỤ CHẠY DEMO - KẾT QUẢ MẪU
+
+[Chạy lệnh: python demoZKP.py]
+
+=== SCHNORR PROTOCOL DEMO (RANDOM CHALLENGE) ===
+
+Nhập số nguyên tố p: 23
+Nhập phần tử sinh g: 5
+Nhập khóa bí mật x: 6
+
+[Public key] y = 8
+(Server chỉ biết y, KHÔNG biết x)
+----------------------
+
+Nhập số vòng xác thực: 3
+
+--- VÒNG 1 ---
+Nhập số ngẫu nhiên r (vòng 1): 7
+[Prover] gửi R = 17
+[Verifier] challenge ngẫu nhiên c = 12
+Nhập phản hồi s (vòng 1): 13
+
+[Verifier kiểm tra vòng 1]:
+Vế trái (g^s mod p) = 21
+Vế phải (R * y^c mod p) = 21
+ XÁC THỰC THÀNH CÔNG
+
+--- VÒNG 2 ---
+Nhập số ngẫu nhiên r (vòng 2): 4
+[Prover] gửi R = 4
+[Verifier] challenge ngẫu nhiên c = 8
+Nhập phản hồi s (vòng 2): 8
+
+[Verifier kiểm tra vòng 2]:
+Vế trái (g^s mod p) = 16
+Vế phải (R * y^c mod p) = 16
+ XÁC THỰC THÀNH CÔNG
+
+--- VÒNG 3 ---
+Nhập số ngẫu nhiên r (vòng 3): 11
+[Prover] gửi R = 16
+[Verifier] challenge ngẫu nhiên c = 3
+Nhập phản hồi s (vòng 3): 7
+
+[Verifier kiểm tra vòng 3]:
+Vế trái (g^s mod p) = 17
+Vế phải (R * y^c mod p) = 17
+ XÁC THỰC THÀNH CÔNG
+
+----------------------------------------
+KẾT QUẢ: 3/3 vòng thành công
+KẾT LUẬN: NGƯỜI DÙNG TRUNG THỰC
+
+-------------------------------------------
+
+VÍ DỤ KẺ GIAN (ATTACKER) - KHÔNG BIẾT x
+
+
+=== SCHNORR PROTOCOL DEMO (RANDOM CHALLENGE) ===
+
+Nhập số nguyên tố p: 23
+Nhập phần tử sinh g: 5
+Nhập khóa bí mật x: 0   (Attacker không biết x, nhập bừa)
+
+[Public key] y = 1
+-----------------------
+
+Nhập số vòng xác thực: 3
+
+--- VÒNG 1 ---
+Nhập số ngẫu nhiên r (vòng 1): 7
+[Prover] gửi R = 17
+[Verifier] challenge ngẫu nhiên c = 15
+Nhập phản hồi s (vòng 1): 5   (Attacker đoán bừa)
+
+[Verifier kiểm tra vòng 1]:
+Vế trái (g^s mod p) = 5^5 mod 23 = 20
+Vế phải (R * y^c mod p) = 17 * 1^15 mod 23 = 17
+❌ XÁC THỰC THẤT BẠI
+
+----------------------------------------
+KẾT QUẢ: 0/3 vòng thành công
+KẾT LUẬN: KẺ GIAN LẬN
+
+
+   LƯU Ý: Khi chạy thật, các số ngẫu nhiên (r, c) sẽ khác mỗi lần
