@@ -1,0 +1,72 @@
+# FILE TEST CASES CHO DEMO ZKP - GIAO THỨC SCHNORR
+# Cách dùng: Copy từng dòng và nhập vào chương trình demoZKP.py
+# Định dạng mỗi dòng: p, g, x
+
+
+# TEST CASE 1: Số nhỏ nhất - Dễ kiểm tra tay
+23,5,6
+
+# TEST CASE 2: p=29
+29,2,14
+
+# TEST CASE 3: p=31
+31,3,15
+
+# TEST CASE 4: p=37
+37,2,18
+
+# TEST CASE 5: p=41
+41,6,20
+
+# TEST CASE 6: p=43
+43,3,21
+
+# TEST CASE 7: p=47
+47,5,23
+
+# TEST CASE 8: p=53
+53,2,26
+
+# TEST CASE 9: p=59
+59,2,29
+
+# TEST CASE 10: p=61
+61,2,30
+
+# TEST CASE 11: p=67
+67,2,33
+
+# TEST CASE 12: p=71
+71,7,35
+
+# TEST CASE 13: p=73
+73,5,36
+
+# TEST CASE 14: p=79
+79,3,39
+
+# TEST CASE 15: p=83
+83,2,41
+
+
+# CÁC TEST VỚI P LỚN HƠN (VẪN CHẠY TỐT)
+
+# TEST CASE 16: p=97
+97,5,48
+
+# TEST CASE 17: p=101
+101,2,50
+
+# TEST CASE 18: p=103
+103,5,51
+
+# TEST CASE 19: p=107
+107,2,53
+
+# TEST CASE 20: p=109
+109,6,54
+
+# LƯU Ý KHI TEST:
+# 1. p PHẢI LÀ SỐ NGUYÊN TỐ (chương trình sẽ kiểm tra)
+# 2. g PHẢI NẰM TRONG (1, p)
+# 3. x CÓ THỂ LÀ BẤT KỲ SỐ NÀO (1 < x < p-1)
